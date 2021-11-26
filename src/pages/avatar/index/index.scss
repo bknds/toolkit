@@ -1,0 +1,62 @@
+@import '../../../static/styles/theme.scss';
+
+.upload-origin-images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $a-background-color;
+
+  .options-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 140px;
+    padding-bottom: 40px;
+    background-color: $a-card-color;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -1px 25px 1px #f0f0f0;
+
+    .options-btn {
+      flex: 2;
+      height: 90px;
+      box-sizing: border-box;
+      margin: 20px;
+      color: #fff;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      font-size: 30px;
+
+      [class^="iconfont-"] {
+        font-size: 40px;
+        margin: 0 5px;
+      }
+
+      &.wx-btn {
+        background-color: $wx-background-color;
+      }
+
+      &.upload-btn {
+        font-weight: 700;
+        position: relative;
+        font-style: italic;
+        border: 5px solid #fff;
+        border-image: linear-gradient(145deg, #00f5e7, #ff0066) 20 20;
+      }
+
+      &.next-btn {
+        flex: 3;
+        font-weight: 700;
+        background-image: linear-gradient(145deg, #c954a4, #b60b55);
+      }
+    }
+  }
+}
