@@ -1,3 +1,4 @@
+import * as serverConfigJson  from 'https://cdn.jsdelivr.net/gh/bknds/toolkit/src/static/paster/paster.json';
 import { Component } from 'react'
 import { View } from '@tarojs/components'
 import { getCurrentInstance, navigateTo, getImageInfo } from '@tarojs/taro'
