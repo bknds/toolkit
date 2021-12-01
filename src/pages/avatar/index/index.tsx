@@ -67,7 +67,7 @@ export default class Index extends Component {
             <BreakdownIcon icon='camera' />
             <BreakdownText text='上传头像' />
           </View>
-          <View className='options-btn upload-btn' onClick={this.toElemeMiniProgram}>免费领券</View>
+          {/* <View className='options-btn upload-btn' onClick={this.toElemeMiniProgram}>免费领券</View> */}
           <View onClick={this.editAvatarPaster} className='options-btn next-btn'>下一步<View className='iconfont-right'></View></View>
         </View>
       </View>

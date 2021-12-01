@@ -33,9 +33,10 @@
     .paster-tabs {
       flex: 1;
 
+
+
       .paster-tab,
       .checked-paster-tab {
-        background-color: $a-background-color;
         display: inline-block;
         margin: 0;
         height: 82px;
@@ -45,6 +46,15 @@
         box-sizing: border-box;
         color: $a-font-color-1;
         font-size: 29px;
+      }
+
+      .paster-tab {
+        background-color: $a-card-color;
+        font-weight: 400;
+      }
+
+      .checked-paster-tab {
+        background-color: $a-background-color;
         font-weight: 600;
       }
     }

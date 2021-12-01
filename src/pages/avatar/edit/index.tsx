@@ -34,6 +34,12 @@ const pasterList = [{
   ],
   "name": '🎄圣诞🎄',
   "code": 'christmas',
+}, {
+  "pasters": [
+    'https://img.alicdn.com/imgextra/i3/904289346/O1CN0117exr02IuWM5unioC_!!904289346.png',
+  ],
+  "name": '糊涂乱画🎨',
+  "code": 'feixi',
 }];
 
 export default class Index extends Component {
@@ -70,10 +76,11 @@ export default class Index extends Component {
 
   }
 
-  /** 撤销操作 */
-  public onUndo = () => {
-    CanvasDrag.undo();
-  }
+  public choosePasterItem = (item) => {
+    this.setState({
+      checkedPasterList: item
+    })
+  };
 
   public save = () => {
     CanvasDrag.export().then((filePath) => {
@@ -99,7 +106,7 @@ export default class Index extends Component {
             <View className='paster-tabs'>
               {
                 this.state.pasterList.map(item => {
-                  return <View className={item.code === pasterObj.code ? 'checked-paster-tab' : 'paster-tab'} key={item.code}>{item.name}</View>
+                  return <View className={item.code === pasterObj.code ? 'checked-paster-tab' : 'paster-tab'} key={item.code} onClick={this.choosePasterItem.bind(this, item)}>{item.name}</View>
                 })
               }
             </View>
