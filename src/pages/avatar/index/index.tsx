@@ -1,8 +1,6 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
-import { chooseImage, navigateTo,navigateToMiniProgram } from '@tarojs/taro'
-import BreakdownIcon from '../../../components/breakdown/icon';
-import BreakdownText from '../../../components/breakdown/text';
+import { chooseImage, navigateTo, navigateToMiniProgram } from '@tarojs/taro'
 import Cropper from '../../../components/cropper';
 import './index.scss'
 
@@ -64,11 +62,11 @@ export default class Index extends Component {
         {originImgUrl && <Cropper aspectRatio={1} imgSrc={originImgUrl} ref={(ele) => this._imgCropperElem = ele} />}
         <View className='options-wrap'>
           <View onClick={this.onUploadPhoto} className='options-btn upload-btn'>
-            <BreakdownIcon icon='camera' />
-            <BreakdownText text='上传头像' />
+            <View className='iconfont-camera'></View>
+            <View>上传头像</View>
           </View>
-          {/* <View className='options-btn upload-btn' onClick={this.toElemeMiniProgram}>免费领券</View> */}
-          <View onClick={this.editAvatarPaster} className='options-btn next-btn'>下一步<View className='iconfont-right'></View></View>
+          <View className='options-btn upload-btn' onClick={this.toElemeMiniProgram}>免费领券</View>
+          <View onClick={this.editAvatarPaster} className='options-btn next-btn'>下一步<View className='iconfont-next'></View></View>
         </View>
       </View>
     )

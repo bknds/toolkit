@@ -17,10 +17,6 @@ class Http {
     return Taro.request(option);
   }
 
-  static cdn({ url, data, header = {} }) {
-    return this.cdnOptions({ url, data, header, method: "GET" });
-  }
-
   static baseOptions(params) {
     let { url, data, method } = params;
     let contentType = "application/json";
@@ -33,14 +29,6 @@ class Http {
       header: { "content-type": contentType }
     };
     return Taro.request(option);
-  }
-
-  static get({ url, data, header = {} }) {
-    return this.baseOptions({ url, data, header, method: "GET" });
-  }
-
-  static post({ url, data, header = {} }) {
-    return this.baseOptions({ url, data, header, method: "POST" });
   }
 }
 

@@ -6,25 +6,23 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $a-background-color;
+  background-color: #fdfdfd;
 
   .options-wrap {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 140px;
     padding-bottom: 40px;
-    background-color: $a-card-color;
+    background-color: #474546;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 -1px 25px 1px #f0f0f0;
 
     .options-btn {
       flex: 2;
-      height: 90px;
+      height: 80px;
       box-sizing: border-box;
       margin: 20px;
       color: #fff;
@@ -33,11 +31,10 @@
       justify-content: center;
       align-items: center;
       border: none;
-      font-size: 30px;
 
       [class^="iconfont-"] {
-        font-size: 40px;
-        margin: 0 5px;
+        font-size: 38px;
+        margin: 0 8px;
       }
 
       &.wx-btn {
@@ -45,17 +42,18 @@
       }
 
       &.upload-btn {
-        font-weight: 700;
+        font-weight: 400;
         position: relative;
-        font-style: italic;
-        border: 5px solid #fff;
-        border-image: linear-gradient(145deg, #00f5e7, #ff0066) 20 20;
+        font-size: 26px;
+        color: #fdfdfd;
       }
 
       &.next-btn {
         flex: 3;
-        font-weight: 700;
-        background-image: linear-gradient(145deg, #c954a4, #b60b55);
+        font-weight: 400;
+        font-size: 26px;
+        border: 1px solid #bbbbbb;
+        color: #fdfdfd;
       }
     }
   }

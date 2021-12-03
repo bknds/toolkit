@@ -1,11 +1,9 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
-import { getCurrentInstance, navigateTo, getImageInfo } from '@tarojs/taro'
+import { getCurrentInstance, navigateTo, getImageInfo, setNavigationBarColor } from '@tarojs/taro'
 import CanvasDrag from '../../../components/canvas-drag/canvas-drag';
+import { GET_PASTER_JSON } from '../../../service/api';
 import './index.scss'
-
-// eslint-disable-next-line import/no-commonjs
-const pasterList = require('https://cdn.jsdelivr.net/gh/bknds/toolkit/src/static/paster.config.ts') ;
 
 type Paster = {
   pasters: string[],
@@ -19,18 +17,43 @@ type State = {
   checkedPasterList: Paster
 }
 
+const pasterListDefault = {
+  "paster": [{
+    "pasters": [
+    ],
+    "name": "🎄圣诞🎄",
+    "code": "christmas"
+  }]
+}
+
 export default class Index extends Component {
   state: State = {
     graph: {},
-    pasterList: pasterList,
-    checkedPasterList: pasterList[0]
+    pasterList: pasterListDefault['paster'],
+    checkedPasterList: pasterListDefault['paster'][0]
   }
 
   componentWillMount() {
+    setNavigationBarColor({
+      frontColor: '#000000',
+      backgroundColor: '#fdfdfd',
+    });
+    this.getPasterList();
     const img = getCurrentInstance().router?.params.img;
     setTimeout(() => {
       CanvasDrag.changeBgImage(img);
     }, 10)
+  }
+
+  /** 获取贴纸配置信息 */
+  public getPasterList = async () => {
+    const res = await GET_PASTER_JSON();
+    if (res && res.statusCode === 200) {
+      this.setState({
+        pasterList: res.data['paster'],
+        checkedPasterList: res.data['paster'][0]
+      })
+    }
   }
 
   /** 添加贴纸 */

@@ -88,13 +88,13 @@ export default class Index extends Component {
 
   render() {
     return (
-      <View className='main-container'>
-        <Image src={this.state.img}></Image>
-        <Button open-type='share' hoverClass='bottom-btn-active' className='buttom-btn'>
+      <View className='save-main-container'>
+        <Image src={this.state.img} className='result-avatar'></Image>
+        <Button open-type='share' className='share-avatar-btn'>
           <View className='iconfont-share'></View>
           <Text>分享给好友</Text>
         </Button>
-        <Button onClick={this.saveAvatarToFile}>baocun</Button>
+        <Button onClick={this.saveAvatarToFile} className='save-avatar-btn'>保存头像</Button>
       </View>
     )
   }

@@ -24,7 +24,7 @@ class DTKSdk {
   }
 
   // 大淘客API请求函数
-  request({ url, data, header = {}, method = "GET" }) {
+  get({ url, data, header = {}, method = "GET" }) {
     const timer = new Date().getTime();
     const nonce = this.getRandomNumberString(6);
     // 获取验签用加密字符串

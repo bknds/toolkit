@@ -1,7 +1,6 @@
-import Taro, { getCurrentInstance } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
 import React from 'react';
 import { View, Image, Canvas, ScrollView } from '@tarojs/components';
-
 import './index.scss';
 
 export interface ICropperProps {

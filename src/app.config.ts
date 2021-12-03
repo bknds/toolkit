@@ -1,13 +1,14 @@
 export default {
   pages: [
+    'pages/avatar/test/index',
     'pages/avatar/index/index',
     'pages/avatar/edit/index',
     'pages/avatar/save/index',
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#f7f7f7',
+    navigationBarBackgroundColor: '#474546',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'white'
   }
 }
