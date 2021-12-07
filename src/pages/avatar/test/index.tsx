@@ -35,14 +35,21 @@ export default class Index extends Component {
       success: result => {
         if (result.path) {
           this._pasterEditorElem.insertPaster({
-            width: 20,
-            height: 20,
+            originPoint: {
+              x: 0,
+              y:0,
+            },
+            size: {
+              w: 120,
+              h:120,
+            },
+            rotate: 20,
+            overturn: true,
             src:result.path
           });
         }
       }
     });
-
   }
 
   render() {
