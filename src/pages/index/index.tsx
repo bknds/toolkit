@@ -22,7 +22,10 @@ export default class Index extends Component {
         </View>
         <View className='user'></View>
         <View className='options'>
-          <View className='button'></View>
+          <View className='button'>
+            <View className='name'>我的电子通勤卡</View>
+            <View className='icon'></View>
+          </View>
           <View className='button'></View>
           <View className='button'></View>
           <View className='button'></View>
